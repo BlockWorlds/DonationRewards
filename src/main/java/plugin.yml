@@ -1,0 +1,14 @@
+name: EffectBox
+version: 0.0.1-SNAPSHOT
+main: com.shiniofthegami.effectbox.EffectBox
+author: [Shini]
+
+commands:
+  trail:
+    permission: effectbox.trailcommand
+    description: applies a trail to a user with an expiry time if set.
+    usage: /<command> <add|remove> <effect> [target] [m|y]
+  effectbox:
+    permission: effectbox.admin
+    description: Managing the EffectBox plugin
+    usage: /<command> [purge|save|load]
