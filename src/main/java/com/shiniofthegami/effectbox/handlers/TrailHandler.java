@@ -30,7 +30,7 @@ public class TrailHandler {
 			if(t.isExpired()){
 				Player p = Bukkit.getPlayer(t.getPlayerUUID());
 				if(p != null){
-					p.sendMessage(ChatColor.GOLD + "Your trail of the type " + EffectHandler.getEffectName(t.getEffect()) + " has expired.");
+					p.sendMessage(ChatColor.GOLD + "Your trail of the type " +  t.getName() + " has expired.");
 				}
 				newTrails.remove(t);
 			}

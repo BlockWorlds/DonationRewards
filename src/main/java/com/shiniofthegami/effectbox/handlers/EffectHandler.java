@@ -1,6 +1,5 @@
 package com.shiniofthegami.effectbox.handlers;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -40,14 +39,15 @@ public class EffectHandler {
 		effects.put("flame", ParticleEffect.FLAME);
 		effects.put("lava", ParticleEffect.LAVA);
 		effects.put("footstep", ParticleEffect.FOOTSTEP);
-		effects.put("reddust", ParticleEffect.CLOUD);
-		effects.put("snowballpoof", ParticleEffect.CLOUD);
-		effects.put("snowshovel", ParticleEffect.CLOUD);
-		effects.put("slime", ParticleEffect.CLOUD);
-		effects.put("heart", ParticleEffect.CLOUD);
-		effects.put("barrier", ParticleEffect.CLOUD);
-		effects.put("droplet", ParticleEffect.CLOUD);
-		effects.put("mobappearance", ParticleEffect.CLOUD);
+		effects.put("reddust", ParticleEffect.REDSTONE);
+		effects.put("snowballpoof", ParticleEffect.SNOWBALL);
+		effects.put("snowshovel", ParticleEffect.SNOW_SHOVEL);
+		effects.put("slime", ParticleEffect.SLIME);
+		effects.put("heart", ParticleEffect.HEART);
+		effects.put("barrier", ParticleEffect.BARRIER);
+		effects.put("droplet", ParticleEffect.WATER_DROP);
+		effects.put("mobappearance", ParticleEffect.MOB_APPEARANCE);
+		//effects.put("testtrail", ParticleEffect.BARRIER);
 	}
 	
 	public static ParticleEffect getEffect(String name){
@@ -58,12 +58,8 @@ public class EffectHandler {
 		return null;
 	}
 	
-	public static String getEffectName(ParticleEffect effect){
-		return effect.getName().toLowerCase();
-	}
-	
-	public static Set<ParticleEffect> getEffects(){
-		return new HashSet<ParticleEffect>(Arrays.asList(ParticleEffect.values()));
+	public static Set<String> getEffects(){
+		return new HashSet<String>(effects.keySet());
 	}
 	
 	

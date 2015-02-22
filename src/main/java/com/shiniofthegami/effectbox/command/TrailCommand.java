@@ -37,22 +37,22 @@ public class TrailCommand extends CommandHandler{
 		return false;
 	}
 	
-	private void addTrail(CommandSender sender, Player target, ParticleEffect effect){
-		Trail t = new Trail(target, effect);
+	private void addTrail(CommandSender sender, Player target, String effectName){
+		Trail t = new Trail(target, effectName);
 		pl.getTrailHandler().addTrail(t);
 		if((Player) sender != target){
-			sender.sendMessage(ChatColor.GOLD + "The " + EffectHandler.getEffectName(effect) + " trail has been applied to " + target.getDisplayName());
+			sender.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to " + target.getDisplayName());
 		}
-		target.sendMessage(ChatColor.GOLD + "The " + EffectHandler.getEffectName(effect) + " trail has been applied to you");
+		target.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to you");
 	}
 	
-	private void addTrail(CommandSender sender, Player target, ParticleEffect effect, Expiry expiry){
-		Trail t = new Trail(target, effect, expiry);
+	private void addTrail(CommandSender sender, Player target, String effectName, Expiry expiry){
+		Trail t = new Trail(target, effectName, expiry);
 		pl.getTrailHandler().addTrail(t);
 		if((Player) sender != target){
-			sender.sendMessage(ChatColor.GOLD + "The " + EffectHandler.getEffectName(effect) + " trail has been applied to " + target.getDisplayName() +" with an expiry time of 1 " + expiry.getName() + ".");
+			sender.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to " + target.getDisplayName() +" with an expiry time of 1 " + expiry.getName() + ".");
 		}
-		target.sendMessage(ChatColor.GOLD + "The " + EffectHandler.getEffectName(effect) + " trail has been applied to you with an expiry time of 1 " + expiry.getName() + ".");
+		target.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to you with an expiry time of 1 " + expiry.getName() + ".");
 	}
 	
 	private void addAllTrails(CommandSender sender, Player target, Expiry expiry){
@@ -66,9 +66,9 @@ public class TrailCommand extends CommandHandler{
 			}
 		}
 		
-		Set<ParticleEffect> effects = new HashSet<ParticleEffect>(EffectHandler.getEffects());
-		for(ParticleEffect effect : effects){
-			if(sender.hasPermission(TRAIL_BASE_PERM + EffectHandler.getEffectName(effect))){
+		Set<String> effects = new HashSet<String>(EffectHandler.getEffects());
+		for(String effect : effects){
+			if(sender.hasPermission(TRAIL_BASE_PERM + effect)){
 				if(expiry == null){
 					addTrail(sender, target, effect);
 				}else{
@@ -146,13 +146,13 @@ public class TrailCommand extends CommandHandler{
 			sender.sendMessage(ChatColor.RED + "The specified effect could not be found");
 			return;
 		}
-		if(!checkPermission(sender, effect, p, expire)){
+		if(!checkPermission(sender, args[0], p, expire)){
 			return;
 		}
 		if(expire == null){
-			addTrail(sender, p, effect);
+			addTrail(sender, p, args[0]);
 		}else{
-			addTrail(sender, p, effect, expire);
+			addTrail(sender, p, args[0], expire);
 		}
 	}
 	
@@ -190,15 +190,15 @@ public class TrailCommand extends CommandHandler{
 			sender.sendMessage(ChatColor.RED + "The specified effect could not be found");
 			return;
 		}
-		if(!checkPermission(sender, effect, p, null)){
+		if(!checkPermission(sender, args[0], p, null)){
 			return;
 		}
-		Trail t = new Trail(p, effect);
+		Trail t = new Trail(p, args[0]);
 		pl.getTrailHandler().removeTrail(t);
-		p.sendMessage(ChatColor.GOLD + "All trails of type " + EffectHandler.getEffectName(effect) + " have been removed from you.");
+		p.sendMessage(ChatColor.GOLD + "All trails of type " + t.getName() + " have been removed from you.");
 	}
 
-	private boolean checkPermission(CommandSender sender, ParticleEffect effect, Player target, Expiry expire){
+	private boolean checkPermission(CommandSender sender, String effectName, Player target, Expiry expire){
 		if(!(sender instanceof Player))
 			return true;
 		Player p = (Player) sender;
@@ -208,7 +208,7 @@ public class TrailCommand extends CommandHandler{
 				return false;
 			}
 		}
-		if(!p.hasPermission(TRAIL_BASE_PERM + EffectHandler.getEffectName(effect))){
+		if(!p.hasPermission(TRAIL_BASE_PERM + effectName)){
 			p.sendMessage(ChatColor.RED + "You are not allowed to use that Trail!");
 			return false;
 		}

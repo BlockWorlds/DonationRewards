@@ -50,21 +50,25 @@ public class Trail implements Serializable{
 		amounts.put("mobappearance",10);
 	}
 	
-	public Trail(Player p, ParticleEffect effect){
+	public Trail(Player p, String effectName){
 		this.playerUUID = p.getUniqueId();
-		this.effect = effect;
+		this.effect = EffectHandler.getEffect(effectName);
 		this.expiryTime = null;
-		this.name = EffectHandler.getEffectName(effect);
+		this.name = effectName.toLowerCase();
 	}
 	
-	public Trail(Player p, ParticleEffect effect, Expiry expiry){
+	public Trail(Player p, String effectName, Expiry expiry){
 		this.playerUUID = p.getUniqueId();
-		this.effect = effect;
+		this.effect = EffectHandler.getEffect(effectName);
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(new Date());
 		cal.add(expiry.getModifier(), 1);
 		this.expiryTime = cal.getTime();
-		this.name = EffectHandler.getEffectName(effect);
+		this.name = effectName.toLowerCase();
+	}
+	
+	public String getName(){
+		return name;
 	}
 	
 	public UUID getPlayerUUID(){

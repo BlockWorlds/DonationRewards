@@ -26,8 +26,13 @@ public class PlayerMoveListener implements Listener{
 					if(e.getFrom().distance(e.getTo())<1){
 						continue;
 					}
+				}try{
+					t.getEffect().display(t.getXOffset(), t.getYOffset(), t.getZOffset(), t.getSpeed(), t.getAmount(), e.getPlayer().getLocation(), t.getRange());
+				}catch(Exception exception){
+					exception.printStackTrace();
+					System.out.println(t.getEffect());
+					System.out.println(t.getName());
 				}
-				t.getEffect().display(t.getXOffset(), t.getYOffset(), t.getZOffset(), t.getSpeed(), t.getAmount(), e.getPlayer().getLocation(), t.getRange());
 			}
 		}
 	}
