@@ -47,7 +47,7 @@ public class EffectHandler {
 		effects.put("barrier", ParticleEffect.BARRIER);
 		effects.put("droplet", ParticleEffect.WATER_DROP);
 		effects.put("mobappearance", ParticleEffect.MOB_APPEARANCE);
-		//effects.put("testtrail", ParticleEffect.BARRIER);
+		effects.put("testtrail", ParticleEffect.BARRIER);
 	}
 	
 	public static ParticleEffect getEffect(String name){

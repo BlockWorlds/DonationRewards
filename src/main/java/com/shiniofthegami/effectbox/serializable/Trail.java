@@ -46,7 +46,7 @@ public class Trail implements Serializable{
 		ranges.put("barrier",100);
 		
 		//mobAppearance
-		ranges.put("mobappearance", 0);
+		ranges.put("mobappearance", 1);
 		amounts.put("mobappearance",10);
 	}
 	

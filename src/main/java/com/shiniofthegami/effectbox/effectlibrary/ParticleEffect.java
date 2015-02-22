@@ -334,7 +334,7 @@ public enum ParticleEffect {
 	 * <li>The speed value has no influence on this particle effect
 	 * </ul>
 	 */
-	BARRIER("barrier", 35, 8),
+	BARRIER("barrier", 35, -1),
 	/**
 	 * A particle effect which is displayed when breaking a tool or eggs hit a block:
 	 * <ul>
@@ -364,14 +364,14 @@ public enum ParticleEffect {
 	 * <li>The speed value has no influence on this particle effect
 	 * </ul>
 	 */
-	WATER_DROP("droplet", 39, 8),
+	WATER_DROP("droplet", 39, -1),
 	/**
 	 * A particle effect which is currently unused:
 	 * <ul>
 	 * <li>It has no visual effect
 	 * </ul>
 	 */
-	ITEM_TAKE("take", 40, 8),
+	ITEM_TAKE("take", 40, -1),
 	/**
 	 * A particle effect which is displayed by elder guardians:
 	 * <ul>
@@ -380,7 +380,7 @@ public enum ParticleEffect {
 	 * <li>The offset values have no influence on this particle effect
 	 * </ul>
 	 */
-	MOB_APPEARANCE("mobappearance", 41, 8);
+	MOB_APPEARANCE("mobappearance", 41, -1);
 
 	private static final Map<String, ParticleEffect> NAME_MAP = new HashMap<String, ParticleEffect>();
 	private static final Map<Integer, ParticleEffect> ID_MAP = new HashMap<Integer, ParticleEffect>();
