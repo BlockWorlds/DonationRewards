@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox.effectlibrary;
+package com.shiniofthegami.donationrewards.trails.effectlibrary;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -14,7 +14,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-import com.shiniofthegami.effectbox.effectlibrary.ReflectionUtils.PackageType;
+import com.shiniofthegami.donationrewards.trails.effectlibrary.ReflectionUtils.PackageType;
 
 
 /**

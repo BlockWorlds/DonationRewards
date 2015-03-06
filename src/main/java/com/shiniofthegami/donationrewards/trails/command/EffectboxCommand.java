@@ -1,16 +1,16 @@
-package com.shiniofthegami.effectbox.command;
+package com.shiniofthegami.donationrewards.trails.command;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import com.shiniofthegami.effectbox.CommandHandler;
-import com.shiniofthegami.effectbox.EffectBox;
-import com.shiniofthegami.effectbox.handlers.TrailHandler;
+import com.shiniofthegami.donationrewards.DonationRewards;
+import com.shiniofthegami.donationrewards.command.CommandHandler;
+import com.shiniofthegami.donationrewards.trails.handlers.TrailHandler;
 
 public class EffectboxCommand extends CommandHandler{
 
-	public EffectboxCommand(EffectBox pl) {
+	public EffectboxCommand(DonationRewards pl) {
 		super(pl);
 	}
 

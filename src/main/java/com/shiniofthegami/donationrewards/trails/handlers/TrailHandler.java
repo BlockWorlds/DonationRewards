@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox.handlers;
+package com.shiniofthegami.donationrewards.trails.handlers;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,14 +12,14 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import com.google.gson.Gson;
-import com.shiniofthegami.effectbox.EffectBox;
-import com.shiniofthegami.effectbox.serializable.Trail;
+import com.shiniofthegami.donationrewards.DonationRewards;
+import com.shiniofthegami.donationrewards.trails.Trail;
 
 public class TrailHandler {
-	private static final File TRAILS_FILE = new File("plugins/EffectBox/trails.json");
+	private static final File TRAILS_FILE = new File("plugins/DonationRewards/trails.json");
 	private Set<Trail> trails = new HashSet<Trail>();
-	private final EffectBox pl;
-	public TrailHandler(EffectBox pl){
+	private final DonationRewards pl;
+	public TrailHandler(DonationRewards pl){
 		this.pl = pl;
 		this.init();
 	}
@@ -40,7 +40,7 @@ public class TrailHandler {
 	}
 	
 	private void init(){
-		final File effectsFolder = new File("plugins/EffectBox/");
+		final File effectsFolder = new File("plugins/DonationRewards/");
 		if(!effectsFolder.exists()){
 			effectsFolder.mkdirs();
 		}

@@ -1,11 +1,11 @@
-package com.shiniofthegami.effectbox.handlers;
+package com.shiniofthegami.donationrewards.trails.handlers;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import com.shiniofthegami.effectbox.effectlibrary.ParticleEffect;
+import com.shiniofthegami.donationrewards.trails.effectlibrary.ParticleEffect;
 
 public class EffectHandler {
 	

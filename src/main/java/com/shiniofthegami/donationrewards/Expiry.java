@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox;
+package com.shiniofthegami.donationrewards;
 
 import java.util.Calendar;
 
@@ -18,5 +18,14 @@ public enum Expiry {
 	
 	public int getModifier(){
 		return calendarmodifier;
+	}
+	
+	public static Expiry get(String name){
+		if(name.equalsIgnoreCase("m")||name.equalsIgnoreCase("month")){
+			return Expiry.MONTH;
+		}else if(name.equalsIgnoreCase("y")||name.equalsIgnoreCase("year")){
+			return Expiry.YEAR;
+		}
+		return null;
 	}
 }

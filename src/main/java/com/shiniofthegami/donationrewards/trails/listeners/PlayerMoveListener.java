@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox.listeners;
+package com.shiniofthegami.donationrewards.trails.listeners;
 
 import java.util.Set;
 
@@ -6,14 +6,14 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import com.shiniofthegami.effectbox.EffectBox;
-import com.shiniofthegami.effectbox.serializable.Trail;
+import com.shiniofthegami.donationrewards.DonationRewards;
+import com.shiniofthegami.donationrewards.trails.Trail;
 
 public class PlayerMoveListener implements Listener{
 
-	private final EffectBox pl;
+	private final DonationRewards pl;
 	
-	public PlayerMoveListener(EffectBox pl){
+	public PlayerMoveListener(DonationRewards pl){
 		this.pl = pl;
 	}
 	

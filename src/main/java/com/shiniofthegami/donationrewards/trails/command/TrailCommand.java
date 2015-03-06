@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox.command;
+package com.shiniofthegami.donationrewards.trails.command;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -10,16 +10,16 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.shiniofthegami.effectbox.CommandHandler;
-import com.shiniofthegami.effectbox.EffectBox;
-import com.shiniofthegami.effectbox.Expiry;
-import com.shiniofthegami.effectbox.effectlibrary.ParticleEffect;
-import com.shiniofthegami.effectbox.serializable.Trail;
-import com.shiniofthegami.effectbox.handlers.EffectHandler;
+import com.shiniofthegami.donationrewards.DonationRewards;
+import com.shiniofthegami.donationrewards.Expiry;
+import com.shiniofthegami.donationrewards.command.CommandHandler;
+import com.shiniofthegami.donationrewards.trails.Trail;
+import com.shiniofthegami.donationrewards.trails.effectlibrary.ParticleEffect;
+import com.shiniofthegami.donationrewards.trails.handlers.EffectHandler;
 
 public class TrailCommand extends CommandHandler{
-	private final static String TRAIL_BASE_PERM = "effectbox.trail.";
-	public TrailCommand(EffectBox pl) {
+	private final static String TRAIL_BASE_PERM = "donationrewards.trail.";
+	public TrailCommand(DonationRewards pl) {
 		super(pl);
 	}
 

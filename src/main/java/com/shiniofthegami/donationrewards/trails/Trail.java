@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox.serializable;
+package com.shiniofthegami.donationrewards.trails;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -11,9 +11,9 @@ import java.util.UUID;
 
 import org.bukkit.entity.Player;
 
-import com.shiniofthegami.effectbox.Expiry;
-import com.shiniofthegami.effectbox.effectlibrary.ParticleEffect;
-import com.shiniofthegami.effectbox.handlers.EffectHandler;
+import com.shiniofthegami.donationrewards.Expiry;
+import com.shiniofthegami.donationrewards.trails.effectlibrary.ParticleEffect;
+import com.shiniofthegami.donationrewards.trails.handlers.EffectHandler;
 
 public class Trail implements Serializable{
 	private static final float DEFAULT_X_OFFSET = 0.05F;

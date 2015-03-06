@@ -1,4 +1,4 @@
-package com.shiniofthegami.effectbox.effectlibrary;
+package com.shiniofthegami.donationrewards.trails.effectlibrary;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

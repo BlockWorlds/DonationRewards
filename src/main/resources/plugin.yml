@@ -1,14 +1,26 @@
-name: EffectBox
+name: DonationRewards
 version: 0.0.1-SNAPSHOT
-main: com.shiniofthegami.effectbox.EffectBox
+main: com.shiniofthegami.donationrewards.DonationRewards
 author: [Shini]
 
 commands:
   trail:
-    permission: effectbox.trailcommand
+    permission: donationrewards.trailcommand
     description: applies a trail to a user with an expiry time if set.
     usage: /<command> <add|remove> <effect> [target] [m|y]
   effectbox:
-    permission: effectbox.admin
+    permission: donationrewards.admin
     description: Managing the EffectBox plugin
     usage: /<command> [purge|save|load]
+  hat:
+    permission: donationrewards.hatcommand
+    description: apply / remove a hat
+    usage: |
+      USAGE:
+      /<command> - sets the item you are currently holding as your hat
+      /<command> usage - display this info
+      /<command> remove - removes your current hat
+      /<command> <item> - sets the specified item as your hat
+      /<command> <target> - sets the item you are currently holding as your target's hat
+      /<command> <target> <item> - sets the specified item as the target's hat
+      /<command> <target> <item> <m|y> - set the specified item as the target's hat with an expiry time of 1 month or 1 year
