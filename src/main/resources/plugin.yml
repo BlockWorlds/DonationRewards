@@ -23,4 +23,5 @@ commands:
       /<command> <item> - sets the specified item as your hat
       /<command> <target> - sets the item you are currently holding as your target's hat
       /<command> <target> <item> - sets the specified item as the target's hat
+      /<command> <target> <m|y> - sets the item you are currently holding as your target's hat with an expiry time of 1 month or 1 year
       /<command> <target> <item> <m|y> - set the specified item as the target's hat with an expiry time of 1 month or 1 year

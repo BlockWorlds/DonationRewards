@@ -23,7 +23,6 @@ public class HatCommand extends CommandHandler{
 		if(args.length > 3){
 			return false;
 		}
-		//Material material = null;
 		ItemStack itemstack = null;
 		Player target = null;
 		Expiry exp = null;
@@ -87,7 +86,30 @@ public class HatCommand extends CommandHandler{
 				itemstack = new ItemStack(mat, 1);
 			}
 		}else if(args.length == 2){
-			
+			if(!sender.hasPermission("donationrewards.hat.others")){
+				sender.sendMessage(ChatColor.RED + "You are not allowed to set other people's hat!");
+				return true;
+			}
+			Player p = (Player) sender;
+			target = Bukkit.getPlayer(args[0]);
+			if(target == null){
+				sender.sendMessage(ChatColor.RED + "Material or Player not found.");
+				return true;
+			}
+			if(args[1].equalsIgnoreCase("m")||args[1].equalsIgnoreCase("month")){
+				exp = Expiry.MONTH;
+				itemstack = p.getItemInHand();
+			}else if(args[1].equalsIgnoreCase("y")||args[1].equalsIgnoreCase("year")){
+				exp = Expiry.YEAR;
+				itemstack = p.getItemInHand();
+			}else{
+				Material mat = Material.matchMaterial(args[1]);
+				if(mat == null){
+					sender.sendMessage(ChatColor.RED + "Material could not be found!");
+					return true;
+				}
+				itemstack = new ItemStack(mat, 1);
+			}
 		}else{
 			if(!sender.hasPermission("donationrewards.hat.others")){
 				sender.sendMessage(ChatColor.RED + "You are not allowed to set other people's hat!");
@@ -129,6 +151,7 @@ public class HatCommand extends CommandHandler{
 	public void removeHat(Player p){
 		Hat h = new Hat(p, null);
 		pl.getHatHandler().removeHat(h);
+		p.getInventory().setHelmet(new ItemStack(Material.AIR, 1));
 	}
 
 }

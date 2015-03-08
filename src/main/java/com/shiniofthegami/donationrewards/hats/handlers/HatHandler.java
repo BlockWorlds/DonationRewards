@@ -49,12 +49,16 @@ public class HatHandler {
 	}
 	
 	public void addHat(Hat t){
-		if(!hats.contains(t)&&getHats(t.getPlayerUUID()).isEmpty()){
-			hats.add(t);
-		}
+		if(!hats.contains(t)){
+			if(getHats(t.getPlayerUUID()).isEmpty()){
+				hats.add(t);
+			}else{
+				removeHat(t);
+				hats.add(t);
+			}
+		}	
 		saveHats(getHatsFile());
 		Bukkit.getPlayer(t.getPlayerUUID()).getInventory().setHelmet(t.getItemStack());
-		System.out.println("ItemMeta: " + t.getItemStack().getItemMeta().serialize());
 	}
 	
 	public Set<Hat> getHats(Player p){

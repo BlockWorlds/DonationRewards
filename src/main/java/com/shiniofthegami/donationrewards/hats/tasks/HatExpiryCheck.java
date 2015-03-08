@@ -11,7 +11,6 @@ public class HatExpiryCheck implements Runnable{
 	
 	public void run() {
 		pl.getHatHandler().checkExpiry();
-		
 	}
 
 }

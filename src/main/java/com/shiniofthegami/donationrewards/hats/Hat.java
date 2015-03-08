@@ -20,7 +20,7 @@ public class Hat implements Serializable{
 	private final Date expiryTime;
 	private final String name;
 	private final Material mat;
-	private final ItemMeta matData;
+	private final ItemMeta matMeta;
 	
 	public Hat(Player p, ItemStack item){
 		this.playerUUID = p.getUniqueId();
@@ -28,11 +28,11 @@ public class Hat implements Serializable{
 		if(item != null){
 			this.name = item.getData().getItemType().toString();
 			this.mat = item.getType();
-			this.matData = item.getItemMeta();
+			this.matMeta = item.getItemMeta();
 		}else{
 			this.name = "";
 			this.mat = null;
-			this.matData = null;
+			this.matMeta = null;
 		}
 		
 	}
@@ -46,11 +46,11 @@ public class Hat implements Serializable{
 		if(item != null){
 			this.name = item.getData().getItemType().toString();
 			this.mat = item.getType();
-			this.matData = item.getItemMeta();
+			this.matMeta = item.getItemMeta();
 		}else{
 			this.name = "";
 			this.mat = null;
-			this.matData = null;
+			this.matMeta = null;
 		}
 	}
 	
@@ -64,7 +64,7 @@ public class Hat implements Serializable{
 	
 	public ItemStack getItemStack(){
 		ItemStack item = new ItemStack(mat,1);
-		item.setItemMeta(matData);
+		item.setItemMeta(matMeta);
 		return item;
 	}
 	
