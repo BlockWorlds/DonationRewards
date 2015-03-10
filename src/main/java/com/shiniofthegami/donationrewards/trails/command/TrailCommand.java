@@ -40,7 +40,7 @@ public class TrailCommand extends CommandHandler{
 	private void addTrail(CommandSender sender, Player target, String effectName){
 		Trail t = new Trail(target, effectName);
 		pl.getTrailHandler().addTrail(t);
-		if((Player) sender != target){
+		if(sender != target){
 			sender.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to " + target.getDisplayName());
 		}
 		target.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to you");
@@ -49,7 +49,7 @@ public class TrailCommand extends CommandHandler{
 	private void addTrail(CommandSender sender, Player target, String effectName, Expiry expiry){
 		Trail t = new Trail(target, effectName, expiry);
 		pl.getTrailHandler().addTrail(t);
-		if((Player) sender != target){
+		if(sender != target){
 			sender.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to " + target.getDisplayName() +" with an expiry time of 1 " + expiry.getName() + ".");
 		}
 		target.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to you with an expiry time of 1 " + expiry.getName() + ".");

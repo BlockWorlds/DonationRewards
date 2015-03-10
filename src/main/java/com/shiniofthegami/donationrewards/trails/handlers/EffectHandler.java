@@ -40,6 +40,7 @@ public class EffectHandler {
 		effects.put("lava", ParticleEffect.LAVA);
 		effects.put("footstep", ParticleEffect.FOOTSTEP);
 		effects.put("reddust", ParticleEffect.REDSTONE);
+		effects.put("cloud", ParticleEffect.CLOUD);
 		effects.put("snowballpoof", ParticleEffect.SNOWBALL);
 		effects.put("snowshovel", ParticleEffect.SNOW_SHOVEL);
 		effects.put("slime", ParticleEffect.SLIME);

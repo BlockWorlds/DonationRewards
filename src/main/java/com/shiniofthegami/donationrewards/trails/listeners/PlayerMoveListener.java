@@ -2,6 +2,7 @@ package com.shiniofthegami.donationrewards.trails.listeners;
 
 import java.util.Set;
 
+import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -23,7 +24,7 @@ public class PlayerMoveListener implements Listener{
 		if(!playerTrails.isEmpty()){
 			for(Trail t : playerTrails){
 				if(!t.anyMoveTriggers()){
-					if(e.getFrom().distance(e.getTo())<1){
+					if(!movedBlock(e.getFrom(), e.getTo())){
 						continue;
 					}
 				}try{
@@ -33,5 +34,9 @@ public class PlayerMoveListener implements Listener{
 				}
 			}
 		}
+	}
+	
+	public boolean movedBlock(Location from, Location to){
+		return from.getBlockX()!=to.getBlockX()||from.getBlockY()!=to.getBlockY()||from.getBlockZ()!=to.getBlockZ();
 	}
 }

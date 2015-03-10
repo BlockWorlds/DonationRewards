@@ -58,7 +58,6 @@ public class HatHandler {
 			}
 		}	
 		saveHats(getHatsFile());
-		Bukkit.getPlayer(t.getPlayerUUID()).getInventory().setHelmet(t.getItemStack());
 	}
 	
 	public Set<Hat> getHats(Player p){
