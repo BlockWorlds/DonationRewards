@@ -7,7 +7,7 @@ import com.shiniofthegami.donationrewards.hats.commands.HatCommand;
 import com.shiniofthegami.donationrewards.hats.handlers.HatHandler;
 import com.shiniofthegami.donationrewards.hats.listeners.HatListener;
 import com.shiniofthegami.donationrewards.trails.Trail;
-import com.shiniofthegami.donationrewards.trails.command.EffectboxCommand;
+import com.shiniofthegami.donationrewards.trails.command.DonationRewardsCommand;
 import com.shiniofthegami.donationrewards.trails.command.TrailCommand;
 import com.shiniofthegami.donationrewards.trails.handlers.EffectHandler;
 import com.shiniofthegami.donationrewards.trails.handlers.TrailHandler;
@@ -20,7 +20,7 @@ public class DonationRewards extends JavaPlugin{
 		this.trailhandler = new TrailHandler(this);
 		this.hathandler = new HatHandler(this);
 		this.getCommand("trail").setExecutor(new TrailCommand(this));
-		this.getCommand("effectbox").setExecutor(new EffectboxCommand(this));
+		this.getCommand("effectbox").setExecutor(new DonationRewardsCommand(this));
 		this.getCommand("hat").setExecutor(new HatCommand(this));
 		Bukkit.getPluginManager().registerEvents(new PlayerMoveListener(this), this);
 		Bukkit.getPluginManager().registerEvents(new HatListener(this), this);

@@ -8,9 +8,9 @@ commands:
     permission: donationrewards.trailcommand
     description: applies a trail to a user with an expiry time if set.
     usage: /<command> <add|remove> <effect> [target] [m|y]
-  effectbox:
+  donationrewards:
     permission: donationrewards.admin
-    description: Managing the EffectBox plugin
+    description: Managing the DonationRewards plugin
     usage: /<command> [purge|save|load]
   hat:
     permission: donationrewards.hatcommand

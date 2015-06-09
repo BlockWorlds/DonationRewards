@@ -8,9 +8,9 @@ import com.shiniofthegami.donationrewards.DonationRewards;
 import com.shiniofthegami.donationrewards.command.CommandHandler;
 import com.shiniofthegami.donationrewards.trails.handlers.TrailHandler;
 
-public class EffectboxCommand extends CommandHandler{
+public class DonationRewardsCommand extends CommandHandler{
 
-	public EffectboxCommand(DonationRewards pl) {
+	public DonationRewardsCommand(DonationRewards pl) {
 		super(pl);
 	}
 
