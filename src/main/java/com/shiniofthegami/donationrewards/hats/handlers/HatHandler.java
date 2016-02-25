@@ -46,6 +46,7 @@ public class HatHandler {
 			effectsFolder.mkdirs();
 		}
 		readHats(getHatsFile());
+		saveHats(getHatsFile());
 	}
 	
 	public void addHat(Hat t){
@@ -57,7 +58,6 @@ public class HatHandler {
 				hats.add(t);
 			}
 		}	
-		saveHats(getHatsFile());
 	}
 	
 	public Set<Hat> getHats(Player p){

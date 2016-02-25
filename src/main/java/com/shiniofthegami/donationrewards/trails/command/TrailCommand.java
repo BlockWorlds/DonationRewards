@@ -40,6 +40,7 @@ public class TrailCommand extends CommandHandler{
 	private void addTrail(CommandSender sender, Player target, String effectName){
 		Trail t = new Trail(target, effectName);
 		pl.getTrailHandler().addTrail(t);
+		pl.getTrailHandler().saveTrails(pl.getTrailHandler().getTrailsFile());
 		if(sender != target){
 			sender.sendMessage(ChatColor.GOLD + "The " + t.getName() + " trail has been applied to " + target.getDisplayName());
 		}

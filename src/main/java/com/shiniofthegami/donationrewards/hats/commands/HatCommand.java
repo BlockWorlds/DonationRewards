@@ -139,6 +139,7 @@ public class HatCommand extends CommandHandler{
 			h = new Hat(target, itemstack, exp);
 		}
 		pl.getHatHandler().addHat(h);
+		pl.getHatHandler().saveHats(pl.getHatHandler().getHatsFile());
 		target.getInventory().setHelmet(itemstack);
 		if(sender.equals(target)){
 			sender.sendMessage(ChatColor.GOLD + "Your hat has been applied!");

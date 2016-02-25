@@ -45,13 +45,13 @@ public class TrailHandler {
 			effectsFolder.mkdirs();
 		}
 		readTrails(getTrailsFile());
+		saveTrails(getTrailsFile());
 	}
 	
 	public void addTrail(Trail t){
 		if(!trails.contains(t)){
 			trails.add(t);
 		}
-		saveTrails(getTrailsFile());
 	}
 	
 	public Set<Trail> getTrails(Player p){
